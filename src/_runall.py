@@ -5,7 +5,7 @@ import _config, _clean
 from mylib import util
 
 # Import all your steps
-import a_step, b_step
+import a_worddb, b_generate
 
 ##############################################################
 ##############################################################
@@ -16,12 +16,12 @@ print start
 ##############################################################
 ##############################################################
 
-a_res_dir = a_step.main(_config.DATA_DIR + '/2016-06-06/', 
-  _config.OUT_PLACE, 
+a_res_dir = a_worddb.main([_config.NOUN_FN, _config.VERB_FN], 
+  _config.OUT_PLACE + 'a_worddb/', 
   run = True)
 
-b_res_dir = b_step.main(a_res_dir, 
-  _config.OUT_PLACE,
+b_res_dir = b_generate.main(a_res_dir, 
+  _config.OUT_PLACE + 'b_generate/',
   run = True)
 
 
@@ -33,4 +33,4 @@ print '\n\nDone.\n'
 end = datetime.datetime.now()
 print end, '\nTotal Time:', end - start
 
-_clean.main()
+# _clean.main()

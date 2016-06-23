@@ -1,8 +1,8 @@
-PRJ_DIR = '/cluster/mshen/prj/.../'  
+PRJ_DIR = '/cluster/mshen/self/relationships/'  
 SRC_DIR = PRJ_DIR + 'src/'
 
-toy = True
-# toy = False
+# toy = True
+toy = False
 if toy:
   PRJ_DIR += 'toy/'
 #######################################################
@@ -20,3 +20,5 @@ CLEAN = False       # Values = 'ask', True, False
 # Project-specific parameters
 #######################################################
 
+NOUN_FN = DATA_DIR + 'quintans/noun4k.txt'
+VERB_FN = DATA_DIR + 'wordnet3.1/unique.conv.data.verb'
